@@ -17,32 +17,7 @@ chai.use(chaiHttp);
 let employee = null;
 
 describe('Employee Check in/out ', () => {
-  before( (done) => {
-    mongoose.connect(MONGO_CON_URL)
-    .then(() => {
-      //console.log("connected to db");
-      done();
-    })
-    .catch(() => {
-        //console.log("can t connect to db");
-        done();
-    })
-
-
-  });
-
-
-  after( (done) => {
-    mongoose.connect(MONGO_CON_URL)
-    .then(() => {
-      //console.log("db is closed");
-      done();
-    })
-    .catch(() => {
-        //console.log("can t connect to db");
-        done();
-    })
-  });
+ 
 
 
   // when a non existing user checks in send a user not found message
