@@ -6,6 +6,8 @@ import server from '../index.js';
 import request from 'supertest';
 import express, { response } from 'express';
 import Employee from '../models/employee.model.js';
+import MONGO_CON_URL from './config.js';
+
 
 const app = express();
 
@@ -15,7 +17,7 @@ chai.use(chaiHttp);
 
 describe('Fetch all employees', () => {
   before( (done) => {
-    mongoose.connect("mongodb://localhost:27017/MyDb?retryWrites=true&w=majority")
+    mongoose.connect(MONGO_CON_URL)
     .then(() => {
       //console.log("connected to db");
       done();
@@ -30,7 +32,7 @@ describe('Fetch all employees', () => {
 
 
   after( (done) => {
-    mongoose.connect("mongodb://localhost:27017/MyDb?retryWrites=true&w=majority")
+    mongoose.connect(MONGO_CON_URL)
     .then(() => {
       //console.log("db is closed");
       done();
