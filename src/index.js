@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import cors from 'cors';
 import ApiRoutes from "./routes/index.js"
 
-mongoose.connect("mongodb://localhost:27017/MyDb?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://technicalTest:test@cluster0.spmvli7.mongodb.net/?retryWrites=true&w=majority")
     .then(() => console.log("connected to db"))
     .catch(() => {
         console.log("can t connect to db");
